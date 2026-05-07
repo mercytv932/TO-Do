@@ -19,6 +19,34 @@
     const input = document.querySelector("#input");
     const add = document.querySelector(".add");
     const taskDisplay = document.querySelector("#taskDisplay");
+
+    add.addEventListener("click", ()=>{
+
+
+      if(!input.value.trim()){
+        alert("Write Something!");
+        
+        return;
+      }
+      
+      const newDiv = document.createElement("div");
+      const pTag = document.createElement("p");
+      pTag.textContent = input.value;
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+
+
+      deleteBtn.addEventListener("click",()=>{
+        newDiv.remove();
+      });
+
+      newDiv.appendChild(pTag);
+      newDiv.appendChild(deleteBtn);
+      taskDisplay.appendChild(newDiv);
+
+      input.value = "";
+
+    });
   </script>
 </body>
 </html>
