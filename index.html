@@ -88,9 +88,6 @@
   transform: scale(0.98);
 }
 
-.deleteBtn{
-  margin-left: auto;
-}
 
 .inputBox{
   display: flex;
@@ -103,7 +100,29 @@
   flex-direction: column;
   gap: 10px;
 }
-    
+
+.task{
+  padding: 3px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deleteBtn, .doneBtn{
+  display: flex;
+}
+
+
+.task.completed p{
+  background-color: greenyellow;
+  text-decoration: line-through;
+  transition: 0.3s ease;
+}
+.task.completed{
+  background-color: greenyellow;
+}
+
   </style>
 </head>
 <body>
@@ -131,19 +150,30 @@
       }
 
       const newDiv = document.createElement("div");
+      newDiv.className = "task";
+
       const pTag = document.createElement("p");
       pTag.textContent = input.value;
+
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
       deleteBtn.className = "deleteBtn";
 
+      const doneBtn = document.createElement("button");
+      doneBtn.textContent = "✔";
+      doneBtn.className = "doneBtn";
 
       deleteBtn.addEventListener("click",()=>{
         newDiv.remove();
       });
 
+      doneBtn.addEventListener("click", ()=>{
+         newDiv.classList.toggle('completed');
+      });
+
       newDiv.appendChild(pTag);
       newDiv.appendChild(deleteBtn);
+      newDiv.appendChild(doneBtn);
       taskDisplay.appendChild(newDiv);
 
       input.value = "";
