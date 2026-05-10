@@ -93,23 +93,74 @@
 }
 
 .task{
-  padding: 3px;
+  padding: 7px 5px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 7px;
 }
 
-.deleteBtn, .doneBtn{
+.deleteBtn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 0.6em;
+  color: red;
+  cursor: pointer;
   display: flex;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 20px;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.deleteBtn:hover,
+.deleteBtn:focus {
+  color: #fff;
+  outline: 0;
+  box-shadow: 0 0 40px 40px red inset;
+}
+
+.doneBtn{
+  display: flex;
+  background-color: #E1EBEE;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s ease;
+  padding: 5px 15px;
+}
+
+.doneBtn:hover{
+  background-color: #32de84;
+  transform: translateY(2px) scale(1.05);
 }
 
 
 .task.completed p{
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   text-decoration: line-through;
   transition: 0.3s ease;
 }
+
+.task.completed .doneBtn{
+  background-color: #32de84;  
+}
+
+.task.completed .deleteBtn {
+  background-color:#ff0000;
+  color: #fff;
+}
+
 .task.completed{
-  background-color: greenyellow;
+  background-color: #32de84;
 }
