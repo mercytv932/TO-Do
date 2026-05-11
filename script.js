@@ -47,7 +47,7 @@
 
       tasks.push(input.value);
       console.log(tasks.length);
-      taskCount.textContent = tasks.length;
+      taskCount.textContent = `${"📋"}: ${tasks.length}`;
 
       input.value = "";
 
