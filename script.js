@@ -51,11 +51,19 @@
 
       const editBtn = document.createElement("button");
       editBtn.textContent = "Edit";
-      editBtn.style.backgroundColor= "Green";
+      editBtn.className = "editBtn";
       newDiv.appendChild(editBtn);
 
       editBtn.addEventListener("click", ()=>{
-        pTag.contentEditable = "true";
+        if(pTag.contentEditable === "true"){
+          pTag.contentEditable = "false";
+        }
+
+        else{
+          pTag.contentEditable = "true";
+        }
+
+        editBtn.classList.toggle("active");
       });
 
     });
