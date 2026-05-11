@@ -14,10 +14,13 @@
     }
 
      .container{
+      width: 600px;
       display: flex;
       flex-direction: column;
-       gap: 20px;   
-}
+      gap: 20px;   
+      background-color: white;
+      border-radius: 7px;
+    }
 
 
     #input {
@@ -163,4 +166,21 @@
 
 .task.completed{
   background-color: #32de84;
+}
+
+
+#taskCount{
+   position: relative;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.84);
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100px;
+  margin: 8px;
 }
