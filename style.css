@@ -169,6 +169,23 @@
 }
 
 
+.editBtn {
+
+  background-color: green; /*inactive state*/
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: background-color 0.3 ease;
+}
+
+.editBtn.active {
+  background-color: #ec4899; /*active state*/
+}
+
 #taskCount{
    position: relative;
   padding: 10px 15px;
