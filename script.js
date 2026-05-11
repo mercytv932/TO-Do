@@ -38,18 +38,25 @@
       doneBtn.addEventListener("click", ()=>{
          newDiv.classList.toggle('completed');
       });
-
       newDiv.appendChild(pTag);
       newDiv.appendChild(deleteBtn);
       newDiv.appendChild(doneBtn);
       taskDisplay.appendChild(newDiv);
-
 
       tasks.push(input.value);
       console.log(tasks.length);
       taskCount.textContent = `${"📋"}: ${tasks.length}`;
 
       input.value = "";
+
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.style.backgroundColor= "Green";
+      newDiv.appendChild(editBtn);
+
+      editBtn.addEventListener("click", ()=>{
+        pTag.contentEditable = "true";
+      });
 
     });
 
