@@ -89,6 +89,13 @@
   width: 450px;
 }
 
+.pTag{
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px rgb(19, 19, 91) solid;
+  background-color: #E1EBEE;
+}
+
 #taskDisplay{
   display: flex;
   flex-direction: column;
@@ -184,7 +191,12 @@
 }
 
 .editBtn.active {
-  background-color: #ec4899; /*active state*/
+  background-color: #36A9AE; /*active state*/
+}
+
+.editBtn:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
 }
 
 #taskCount{
