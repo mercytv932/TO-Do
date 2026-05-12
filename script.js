@@ -20,6 +20,7 @@
 
       const pTag = document.createElement("p");
       pTag.textContent = input.value;
+      pTag.className = "pTag";
 
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
