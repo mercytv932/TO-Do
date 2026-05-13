@@ -30,6 +30,12 @@
       doneBtn.textContent = "✔";
       doneBtn.className = "doneBtn";
 
+
+
+      if(input.value.length >150){
+        alert("too long!");
+      }
+
       deleteBtn.addEventListener("click",()=>{
         newDiv.remove();
         tasks.length -= 1;
@@ -65,7 +71,11 @@
         }
 
         editBtn.classList.toggle("active");
+
+        pTag.className = "editedPTag";
+
       });
+
 
     });
 
